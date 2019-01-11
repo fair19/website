@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+
+#gallery:hover {
+  border: 1px solid #777;
+}
+
+#gallery img {
+  width: 100%;
+  height: auto;
+}
+
+#gallery2 {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  display: none;
+}
+
+
+#gallery2:hover {
+  border: 1px solid #777;
+}
+
+#gallery2 img {
+  width: 100%;
+  height: auto;
+}
+
+#gallery3 {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+  display: none;
+}
+
+
+#gallery3:hover {
+  border: 1px solid #777;
+}
+
+#gallery3 img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+</head>
+<body onkeypress="hello(event)" onload = "loadink()">
+
+<div id="gallery">
+  <a target="_blank" href="img_5terre.jpg">
+    <img src="5terre.jpg" alt="5Terre" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div id="gallery">
+  <a target="_blank" href="img_forest.jpg">
+    <img src="img_forest.jpg" alt="Forest" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div id="gallery2">
+  <a target="_blank" href="img_lights.jpg">
+    <img src="img_lights.jpg" alt="Northern Lights" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<div id="gallery3">
+  <a target="_blank" href="img_mountains.jpg">
+    <img src="img_mountains.jpg" alt="Mountains" width="600" height="400">
+  </a>
+  <div class="desc">Add a description of the image here</div>
+</div>
+
+<script>
+var x = 0;
+var y = 0;
+var z = 0;
+function hello(event) {
+  x = event.which || event.keyCode
+}
+
+function hello2(event) {
+  y = event.which || event.keyCode
+}
+
+function hello3(event) {
+  z = event.which || event.keyCode
+}
+
+
+function loadink() {
+setInterval(function(){
+if (x == 117){
+
+  document.getElementById("gallery2").style.display="block";
+  document.getElementById("gallery3").style.display="block";
+  } 
+  }
+  , 1); 
+setInterval(function(){
+x=0;
+  }, 1); 
+}
+
+
+</script>
+
+</body>
+</html>
+  
