@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<style>
+@font-face { font-family: Montserrat; src: url('Montserrat-Medium.otf'); } 
+@font-face { font-family: GCE; src: url('GLECB.ttf'); } 
+
+body{
+background-color: black;
+}
+
+#cdt{
+  text-align: center;
+  font-size: 60px;
+  visibility: hidden;
+  margin-top: 250px;
+  font-family: GCE;
+  color: white;
+}
+
+#tt{
+  text-align: center;
+  font-size: 30px;
+  visibility: hidden;
+  font-family: GCE;
+  color: white;
+}
+</style>
+<body>
+
+<script>
+function hatdog() {
+  var x = document.getElementById("pw").value;
+  if (x == "N3wm00N_"){
+  document.body.style.backgroundColor = "black";
+  document.getElementById("pw").style.visibility = "hidden";
+  document.getElementById("bt").style.visibility = "hidden";
+  document.getElementById("cdt").style.visibility = "visible";
+  document.getElementById("tt").style.visibility = "visible";
+
+  }
+}
+
+var countDownDate = new Date("***REMOVED***").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+    
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("cdt").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("cdt").innerHTML = "***REMOVED***";
+  }
+}, 1000);
+</script>
+
+<p id = "cdt"></p>
+<p id = "tt">may paparating.</p>
+
+<input type="image" id="bt" src = "bt.png" onclick = "hatdog()" style = "height: 30px; left: 54%; top: 49%; position: absolute;">
+<input type="text" id="pw" style = "margin: 0; top: 50%; left: 40%; position: absolute; font-family: Montserrat;">
+
+
+</body>
+</html>
