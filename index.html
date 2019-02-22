@@ -27,7 +27,8 @@ $(function(){
 		if ($("#pw").val() == "N3wm00N_"){
 			$("#pw").fadeOut(1000);
 			$("#text").fadeOut(1000);
-			$("#bt").fadeOut(1000, function(){				
+			$("#bt").fadeOut(1000, function(){	
+				$("#mn").fadeTo(1000,1);
 				$("#cdt").fadeTo(1000,1,function(){
 					$("#tt").fadeTo(1000,1);
 				});
@@ -74,6 +75,7 @@ background-color: black;
 </head>
 
 <body>
+<img src = "bt.png" style = "height: 20px; left: 50%; position: absolute;" id = "mn">
 <p id = "cdt">XX XXXX XXXX</p>
 <p id = "tt">may paparating.</p>
 
