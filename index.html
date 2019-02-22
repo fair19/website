@@ -5,8 +5,13 @@
 <script>
 $(function(){
 	var countDownDate = new Date("***REMOVED***").getTime();
-	var y =  setInterval(function(){ $("#cdt").html("XXXXX"); }, 1);
-	var x = setInterval(function() {
+	
+	$("#bt").click(function(){
+		if ($("#pw").val() == "N3wm00N_"){
+		var interval;
+		return function(){
+		if (interval) clearInterval (interval);
+		interval = setInterval(function() {
 		var now = new Date().getTime();
 			
 		var distance = countDownDate - now;
@@ -24,9 +29,8 @@ $(function(){
 			$("#cdt").html("***REMOVED***");
 		}
 	}, 1000);
-	$("#bt").click(function(){
-		if ($("#pw").val() == "N3wm00N_"){
-			clearInterval(y);
+		}
+		}
 			$("#pw").fadeOut(1000);
 			$("#text").fadeOut(1000);
 			$("#bt").fadeOut(1000, function(){	
