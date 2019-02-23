@@ -75,7 +75,8 @@ $(function(){
 		else {
 			$("#text").stop();
 			$("#text").css("opacity","1");
-			$("#text").html("Mali.");
+			if($("#pw").val().toLowerCase() == "loona") $("#text").html("We stan.");
+			else $("#text").html("Mali.");
 			$("#text").fadeTo(1500, 0);
 		}
 		})
