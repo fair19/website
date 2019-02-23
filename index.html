@@ -10,14 +10,15 @@
 <script>
 $(function(){
 	var decrypt = function(text, pw) { return CryptoJS.AES.decrypt(text, pw).toString(CryptoJS.enc.Utf8); }
-	var test = ["U2FsdGVkX19cA2PgYP2Uq5gF4UhN9ol6UeeQ3p1+OMMbzB4aP5C6E4Our8qagRim",
+	var test = ["U2FsdGVkX1+yTMdTrNHMV4BD54pCnV4iwG8QzZ7jQSU=",
+		"U2FsdGVkX19cA2PgYP2Uq5gF4UhN9ol6UeeQ3p1+OMMbzB4aP5C6E4Our8qagRim",
 				"U2FsdGVkX1/GDTswSV/WKBh3H7Ed1HvmAm7qPFmrrbk=",
 				"U2FsdGVkX1+Pe/ULPSUcEL8982nCp9vjbYWOh50J8SI=",
 				]
 	var decryptArray = function(encrypted, pw) {
 		var decrypted = [];
 		
-		if (decrypt(encrypted[0], pw) == "") return null;
+		if (decrypt(encrypted[0], pw) != "hatdog") return null;
 		
 		for(i=0;i<encrypted.length;i++){
 			decrypted.push( decrypt(encrypted[i], pw) );
@@ -34,7 +35,7 @@ $(function(){
 			$("#pw").fadeOut(1000);
 			$("#text").fadeOut(1000);
 			$("div").eq(3).fadeOut(1000, function(){
-				var countDownDate = new Date(decrypted[0]).getTime();
+				var countDownDate = new Date(decrypted[1]).getTime();
 				var x = setInterval(function() {
 					var now = new Date().getTime();
 						
@@ -50,13 +51,13 @@ $(function(){
 						
 					if (distance < 0) { 
 						clearInterval(x);
-						$("#cdt").html(decrypted[2]);
+						$("#cdt").html(decrypted[3]);
 					}
 				}, 1000);
 				$("div").eq(3).html('<h1 id="cdt" style="opacity:0; color:white; font-family:GCE;font-size:60px;text-align:center;"></h1>')
 				$("div").eq(3).css({"width":"auto","height":"auto"});
 				$("h3").css({"font-size":"30px","font-family":"GCE","opacity":"0"});
-				$("h3").html(decrypted[1]);		
+				$("h3").html(decrypted[2]);		
 				$("#cdt").stop();
 				$("#cdt").fadeTo(1000,1,function(){
 					$("h3").fadeTo(1000,1);
