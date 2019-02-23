@@ -9,7 +9,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js"></script>
 <script>
 $(function(){
-	var decrypt = function(text, pw) { return CryptoJS.AES.decrypt(text, pw).toString(); }
+	var decrypt = function(text, pw) { return CryptoJS.AES.decrypt(text, pw).toString(CryptoJS.enc.Utf8); }
 	var test = ["U2FsdGVkX1+yTMdTrNHMV4BD54pCnV4iwG8QzZ7jQSU=",
 		"U2FsdGVkX19cA2PgYP2Uq5gF4UhN9ol6UeeQ3p1+OMMbzB4aP5C6E4Our8qagRim",
 				"U2FsdGVkX1/GDTswSV/WKBh3H7Ed1HvmAm7qPFmrrbk=",
